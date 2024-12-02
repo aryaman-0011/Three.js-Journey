@@ -15,6 +15,9 @@ const mesh = new THREE.Mesh(geometry, material);
 mesh.position.x = 0.7;
 mesh.position.y = -0.6;
 mesh.position.z = 1;
+
+// mesh.position.set(0.7, -0.6, 1); // Short-hand for positioning mesh in x, y, z axis.
+
 scene.add(mesh);
 
 /**
