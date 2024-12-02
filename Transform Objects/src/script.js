@@ -20,10 +20,17 @@ mesh.position.z = 1;
 
 scene.add(mesh);
 
-// Axes Helper
-const axesHelper = new THREE.AxesHelper()
-scene.add(axesHelper)
+// Scale Mesh
 
+mesh.scale.x = 2;
+mesh.scale.y = 0.5;
+mesh.scale.z = 0.5;
+
+// mesh.scale.set(2, 0.5, 0.5);
+
+// Axes Helper
+const axesHelper = new THREE.AxesHelper();
+scene.add(axesHelper);
 
 /**
  * Sizes
