@@ -36,7 +36,7 @@ window.addEventListener('resize', () => {
   camera.updateProjectionMatrix();
 
   // Update Renderer
-  renderer.setSize(sizes.width / sizes.height)
+  renderer.setSize(sizes.width, sizes.height)
 });
 
 /**
