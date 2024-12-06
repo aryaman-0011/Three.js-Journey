@@ -11,7 +11,27 @@ const canvas = document.querySelector("canvas.webgl");
 const scene = new THREE.Scene();
 
 // Object
-const geometry = new THREE.BoxGeometry(1, 1, 1, 4, 4, 4);
+// const geometry = new THREE.BoxGeometry(1, 1, 1, 4, 4, 4);
+
+const positionArray = new Float32Array([0, 0, 0, 0, 1, 0, 1, 0, 0]);
+
+const positionsAttribute = new THREE.BufferAttribute(positionArray, 3);
+
+const geometry = new THREE.BufferGeometry();
+geometry.setAttribute("position", positionsAttribute);
+
+// positionArray[0] = 0
+// positionArray[1] = 0
+// positionArray[2] = 0
+
+// positionArray[3] = 0
+// positionArray[4] = 1
+// positionArray[5] = 0
+
+// positionArray[6] = 1
+// positionArray[7] = 0
+// positionArray[8] = 0
+
 const material = new THREE.MeshBasicMaterial({
   color: 0xff0000,
   wireframe: true,
