@@ -26,7 +26,7 @@ const sizes = {
   height: window.innerHeight,
 };
 
-window.addEventListener('resize', () => {
+window.addEventListener("resize", () => {
   // Update Sizes
   sizes.width = window.innerWidth;
   sizes.height = window.innerHeight;
@@ -36,7 +36,8 @@ window.addEventListener('resize', () => {
   camera.updateProjectionMatrix();
 
   // Update Renderer
-  renderer.setSize(sizes.width, sizes.height)
+  renderer.setSize(sizes.width, sizes.height);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 });
 
 /**
@@ -63,6 +64,7 @@ const renderer = new THREE.WebGLRenderer({
   canvas: canvas,
 });
 renderer.setSize(sizes.width, sizes.height);
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
 /**
  * Animate
