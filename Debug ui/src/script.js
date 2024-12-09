@@ -33,10 +33,13 @@ const material = new THREE.MeshBasicMaterial({
 const mesh = new THREE.Mesh(geometry, material);
 scene.add(mesh);
 
-gui.add(mesh.position, "y").min(-3).max(3).step(0.01).name("elevation");
-gui.add(mesh, "visible");
-gui.add(material, "wireframe");
-gui.addColor(debugObject, "color").onChange((value) => {
+const cubeTweaks = gui.addFolder("Awesome Cube");
+cubeTweaks.close();
+
+cubeTweaks.add(mesh.position, "y").min(-3).max(3).step(0.01).name("elevation");
+cubeTweaks.add(mesh, "visible");
+cubeTweaks.add(material, "wireframe");
+cubeTweaks.addColor(debugObject, "color").onChange((value) => {
   material.color.set(debugObject.color);
 });
 
@@ -44,11 +47,11 @@ debugObject.spin = () => {
   gsap.to(mesh.rotation, { y: mesh.rotation.y + Math.PI * 2 });
 };
 
-gui.add(debugObject, "spin");
+cubeTweaks.add(debugObject, "spin");
 
 debugObject.subdivision = 2;
 
-gui
+cubeTweaks
   .add(debugObject, "subdivision")
   .min(1)
   .max(40)
