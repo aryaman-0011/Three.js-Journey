@@ -46,7 +46,8 @@ const material = new THREE.MeshBasicMaterial();
 // material.color = new THREE.Color("green");
 // material.wireframe = true;
 material.transparent = true;
-material.opacity = 0.2;
+// material.opacity = 0.2;
+material.alphaMap = doorAlphaTexture;
 
 const sphere = new THREE.Mesh(new THREE.SphereGeometry(0.5, 16, 16), material);
 sphere.position.x = -1.5;
