@@ -42,9 +42,11 @@ matcapTexture.colorSpace = THREE.SRGBColorSpace;
 // MeshBasicMaterial
 // const material = new THREE.MeshBasicMaterial({ map: doorColorTexture });
 const material = new THREE.MeshBasicMaterial();
-material.map = doorColorTexture;
-material.color = new THREE.Color('green')
-material.wireframe = true
+// material.map = doorColorTexture;
+// material.color = new THREE.Color("green");
+// material.wireframe = true;
+material.transparent = true;
+material.opacity = 0.2;
 
 const sphere = new THREE.Mesh(new THREE.SphereGeometry(0.5, 16, 16), material);
 sphere.position.x = -1.5;
