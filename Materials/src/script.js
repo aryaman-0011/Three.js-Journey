@@ -29,7 +29,7 @@ const doorMetalnessTexture = textureLoader.load(
 const doorRoughnessTexture = textureLoader.load(
   "./textures/door/roughness.jpg"
 );
-const matcapTexture = textureLoader.load("./textures/matcaps/1.png");
+const matcapTexture = textureLoader.load("./textures/matcaps/8.png");
 const gradientTexture = textureLoader.load("./textures/gradients/3.jpg");
 
 doorColorTexture.colorSpace = THREE.SRGBColorSpace;
