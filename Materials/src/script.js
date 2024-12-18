@@ -57,7 +57,11 @@ matcapTexture.colorSpace = THREE.SRGBColorSpace;
 // material.flatShading = true;
 
 // MeshMatcapMaterial
-const material = new THREE.MeshMatcapMaterial();
+// const material = new THREE.MeshMatcapMaterial();
+// material.matcap = matcapTexture
+
+// MeshDepthMaterial
+const material = new THREE.MeshDepthMaterial();
 material.matcap = matcapTexture
 
 const sphere = new THREE.Mesh(new THREE.SphereGeometry(0.5, 16, 16), material);
