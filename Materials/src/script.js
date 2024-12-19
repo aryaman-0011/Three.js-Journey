@@ -61,8 +61,10 @@ matcapTexture.colorSpace = THREE.SRGBColorSpace;
 // material.matcap = matcapTexture
 
 // MeshDepthMaterial
-const material = new THREE.MeshDepthMaterial();
-material.matcap = matcapTexture
+// const material = new THREE.MeshDepthMaterial();
+
+// MeshLambertMaterial
+const material = new THREE.MeshLambertMaterial();
 
 const sphere = new THREE.Mesh(new THREE.SphereGeometry(0.5, 16, 16), material);
 sphere.position.x = -1.5;
@@ -76,6 +78,8 @@ const torus = new THREE.Mesh(
 torus.position.x = 1.5;
 
 scene.add(sphere, plane, torus);
+
+
 
 /**
  * Sizes
