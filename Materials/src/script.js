@@ -1,12 +1,12 @@
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
-import GUI from 'lil-gui'
+import GUI from "lil-gui";
 
 /**
  * Debug
  */
 
-const gui = new GUI()
+const gui = new GUI();
 
 /**
  * Base
@@ -85,14 +85,13 @@ matcapTexture.colorSpace = THREE.SRGBColorSpace;
 // gradientTexture.generateMipmaps = false;
 // material.gradientMap = gradientTexture;
 
-
 // MeshStandardMaterial
-const material = new THREE.MeshStandardMaterial()
-material.metalness = 0.45
-material.roughness = 0.65
+const material = new THREE.MeshStandardMaterial();
+material.metalness = 0.45;
+material.roughness = 0.65;
 
-gui.add(material, 'metalness').min(0).max(1).step(0.0001)
-gui.add(material, 'roughness').min(0).max(1).step(0.0001)
+gui.add(material, "metalness").min(0).max(1).step(0.0001);
+gui.add(material, "roughness").min(0).max(1).step(0.0001);
 
 const sphere = new THREE.Mesh(new THREE.SphereGeometry(0.5, 16, 16), material);
 sphere.position.x = -1.5;
