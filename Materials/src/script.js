@@ -90,6 +90,9 @@ matcapTexture.colorSpace = THREE.SRGBColorSpace;
 const material = new THREE.MeshStandardMaterial();
 material.metalness = 0.7;
 material.roughness = 0.2;
+material.map = doorColorTexture;
+material.aoMap = doorAmbientOcclusionTexture;
+material.aoMapIntensity = 3
 
 gui.add(material, "metalness").min(0).max(1).step(0.0001);
 gui.add(material, "roughness").min(0).max(1).step(0.0001);
@@ -111,14 +114,14 @@ scene.add(sphere, plane, torus);
  * Lights
  */
 
-const ambientLight = new THREE.AmbientLight(0xffffff, 1);
-scene.add(ambientLight);
+// const ambientLight = new THREE.AmbientLight(0xffffff, 1);
+// scene.add(ambientLight);
 
-const pointLight = new THREE.PointLight(0xffffff, 30);
-pointLight.position.x = 2;
-pointLight.position.y = 3;
-pointLight.position.z = 4;
-scene.add(pointLight);
+// const pointLight = new THREE.PointLight(0xffffff, 30);
+// pointLight.position.x = 2;
+// pointLight.position.y = 3;
+// pointLight.position.z = 4;
+// scene.add(pointLight);
 
 /**
  * Environment Map
