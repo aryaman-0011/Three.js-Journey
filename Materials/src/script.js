@@ -92,12 +92,15 @@ material.metalness = 0.7;
 material.roughness = 0.2;
 material.map = doorColorTexture;
 material.aoMap = doorAmbientOcclusionTexture;
-material.aoMapIntensity = 3
+material.aoMapIntensity = 1
+material.displacementMap = doorHeightTexture
+material.displacementScale = 0.1
+
 
 gui.add(material, "metalness").min(0).max(1).step(0.0001);
 gui.add(material, "roughness").min(0).max(1).step(0.0001);
 
-const sphere = new THREE.Mesh(new THREE.SphereGeometry(0.5, 16, 16), material);
+const sphere = new THREE.Mesh(new THREE.SphereGeometry(0.5, 64, 64), material);
 sphere.position.x = -1.5;
 
 const plane = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), material);
