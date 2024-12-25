@@ -126,11 +126,13 @@ gui.add(material, "metalness").min(0).max(1).step(0.0001);
 gui.add(material, "roughness").min(0).max(1).step(0.0001);
 
 // Clearcoat
-material.clearcoat = 1
-material.clearcoatRoughness = 0
+// material.clearcoat = 1
+// material.clearcoatRoughness = 0
 
-gui.add(material, "clearcoat").min(0).max(1).step(0.0001);
-gui.add(material, "clearcoatRoughness").min(0).max(1).step(0.0001);
+// gui.add(material, "clearcoat").min(0).max(1).step(0.0001);
+// gui.add(material, "clearcoatRoughness").min(0).max(1).step(0.0001);
+
+// Sheen
 
 const sphere = new THREE.Mesh(new THREE.SphereGeometry(0.5, 64, 64), material);
 sphere.position.x = -1.5;
