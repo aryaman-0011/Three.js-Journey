@@ -33,15 +33,16 @@ fontLoader.load("/fonts/helvetiker_regular.typeface.json", (font) => {
             font: font,
             size: 0.5,
             depth: 0.2,
-            curveSegments: 12,
+            curveSegments: 5,
             bevelEnabled: true,
             bevelThickness: 0.03,
             bevelSize: 0.02,
             bevelOffset: 0,
-            bevelSegments: 5,
+            bevelSegments: 4,
         }
     )
     const textMaterial = new THREE.MeshBasicMaterial()
+    textMaterial.wireframe = true
     const text = new THREE.Mesh(textGeometry, textMaterial)
     scene.add(text)
 })
