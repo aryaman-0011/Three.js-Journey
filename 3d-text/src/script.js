@@ -25,6 +25,8 @@ scene.add(axesHelper)
  * Textures
  */
 const textureLoader = new THREE.TextureLoader();
+const matcapTexture = textureLoader.load('/textures/matcaps/1.png')
+matcapTexture.colorSpace = THREE.SRGBColorSpace
 
 /**
  * Fonts
@@ -54,8 +56,8 @@ fontLoader.load("/fonts/helvetiker_regular.typeface.json", (font) => {
 
     textGeometry.center()
 
-    const textMaterial = new THREE.MeshBasicMaterial()
-    textMaterial.wireframe = true
+    const textMaterial = new THREE.MeshMatcapMaterial({ matcap: matcapTexture })
+    // textMaterial.wireframe = true
     const text = new THREE.Mesh(textGeometry, textMaterial)
     scene.add(text)
 })
