@@ -56,7 +56,8 @@ fontLoader.load("/fonts/helvetiker_regular.typeface.json", (font) => {
 
     textGeometry.center()
 
-    const textMaterial = new THREE.MeshMatcapMaterial({ matcap: matcapTexture })
+    const textMaterial = new THREE.MeshMatcapMaterial()
+    textMaterial.matcap = matcapTexture
     // textMaterial.wireframe = true
     const text = new THREE.Mesh(textGeometry, textMaterial)
     scene.add(text)
