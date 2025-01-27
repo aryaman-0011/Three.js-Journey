@@ -57,7 +57,15 @@ fontLoader.load("/fonts/helvetiker_regular.typeface.json", (font) => {
     // textMaterial.wireframe = true
     const text = new THREE.Mesh(textGeometry, textMaterial)
     scene.add(text)
-})
+
+    for (let i = 0; i < 100; i++) {
+        const donutGeometry = new THREE.TorusGeometry(0.3, 0.2, 20, 45)
+        const donutMaterial = new THREE.MeshMatcapMaterial({ matcap: matcapTexture })
+        const donut = new THREE.Mesh(donutGeometry, donutMaterial)
+        scene.add(donut)
+    }
+}
+)
 
 
 /**
