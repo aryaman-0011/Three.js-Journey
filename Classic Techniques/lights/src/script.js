@@ -54,6 +54,9 @@ gui.add(spotLight, 'intensity').min(0).max(10).step(0.001).name('Spot Light')
 const hemisphereLightHelper = new THREE.HemisphereLightHelper(hemisphereLight, 0.2)
 scene.add(hemisphereLightHelper)
 
+const directionalLightHelper = new THREE.DirectionalLightHelper(directionalLight, 0.2)
+scene.add(directionalLightHelper)
+
 /**
  * Objects
  */
