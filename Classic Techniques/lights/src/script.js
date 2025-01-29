@@ -32,10 +32,10 @@ const pointLight = new THREE.PointLight(0xff9000, 1.5, 10, 2)
 pointLight.position.set(1, -0.5, 1)
 scene.add(pointLight)
 
-const reactAreaLight = new THREE.RectAreaLight(0x4e00ff, 6, 1, 1)
-reactAreaLight.position.set(-1.5, 0, 1.5)
-reactAreaLight.lookAt(new THREE.Vector3())
-scene.add(reactAreaLight)
+const rectAreaLight = new THREE.RectAreaLight(0x4e00ff, 6, 1, 1)
+rectAreaLight.position.set(-1.5, 0, 1.5)
+rectAreaLight.lookAt(new THREE.Vector3())
+scene.add(rectAreaLight)
 
 const spotLight = new THREE.SpotLight(0x78ff00, 4.5, 6, Math.PI * 0.1, 0.25, 1)
 spotLight.position.set(0, 2, 3)
@@ -48,7 +48,7 @@ gui.add(ambientLight, 'intensity').min(0).max(3).step(0.001).name('Ambient Light
 gui.add(directionalLight, 'intensity').min(0).max(3).step(0.001).name('Directional Light')
 gui.add(hemisphereLight, 'intensity').min(0).max(3).step(0.001).name('Hemisphere Light')
 gui.add(pointLight, 'intensity').min(0).max(3).step(0.001).name('Point Light')
-gui.add(reactAreaLight, 'intensity').min(0).max(10).step(0.001).name('ReactArea Light')
+gui.add(rectAreaLight, 'intensity').min(0).max(10).step(0.001).name('RectArea Light')
 gui.add(spotLight, 'intensity').min(0).max(10).step(0.001).name('Spot Light')
 
 // Helpers
@@ -67,7 +67,7 @@ window.requestAnimationFrame(() => {
     spotLightHelper.update()
 })
 
-const rectAreaLightHelper = new RectAreaLightHelper(reactAreaLight)
+const rectAreaLightHelper = new RectAreaLightHelper(rectAreaLight)
 scene.add(rectAreaLightHelper)
 
 
