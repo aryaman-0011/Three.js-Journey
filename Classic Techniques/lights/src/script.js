@@ -36,11 +36,19 @@ reactAreaLight.position.set(-1.5, 0, 1.5)
 reactAreaLight.lookAt(new THREE.Vector3())
 scene.add(reactAreaLight)
 
-gui.add(ambientLight, 'intensity').min(0).max(3).step(0.001)
+const spotLight = new THREE.SpotLight(0x78ff00, 4.5, 6, Math.PI * 0.1, 0.25, 1)
+spotLight.position.set(0, 2, 3)
+scene.add(spotLight)
+
+spotLight.target.position.x = -0.75
+scene.add(spotLight.target)
+
+gui.add(ambientLight, 'intensity').min(0).max(3).step(0.001).name
 gui.add(directionalLight, 'intensity').min(0).max(3).step(0.001)
 gui.add(hemisphereLight, 'intensity').min(0).max(3).step(0.001)
 gui.add(pointLight, 'intensity').min(0).max(3).step(0.001)
 gui.add(reactAreaLight, 'intensity').min(0).max(10).step(0.001)
+gui.add(spotLight, 'intensity').min(0).max(10).step(0.001)
 
 /**
  * Objects
@@ -84,8 +92,7 @@ const sizes = {
     height: window.innerHeight
 }
 
-window.addEventListener('resize', () =>
-{
+window.addEventListener('resize', () => {
     // Update sizes
     sizes.width = window.innerWidth
     sizes.height = window.innerHeight
@@ -127,8 +134,7 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
  */
 const clock = new THREE.Clock()
 
-const tick = () =>
-{
+const tick = () => {
     const elapsedTime = clock.getElapsedTime()
 
     // Update objects
