@@ -24,6 +24,7 @@ const directionalLight = new THREE.DirectionalLight(0x00fffc, 0.9)
 scene.add(directionalLight)
 
 gui.add(ambientLight, 'intensity').min(0).max(3).step(0.001)
+gui.add(directionalLight, 'intensity').min(0).max(3).step(0.001)
 
 /**
  * Objects
