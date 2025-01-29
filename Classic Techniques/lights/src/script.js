@@ -34,6 +34,7 @@ scene.add(pointLight)
 gui.add(ambientLight, 'intensity').min(0).max(3).step(0.001)
 gui.add(directionalLight, 'intensity').min(0).max(3).step(0.001)
 gui.add(hemisphereLight, 'intensity').min(0).max(3).step(0.001)
+gui.add(pointLight, 'intensity').min(0).max(3).step(0.001)
 
 /**
  * Objects
