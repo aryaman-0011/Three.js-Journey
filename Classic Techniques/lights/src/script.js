@@ -50,6 +50,10 @@ gui.add(pointLight, 'intensity').min(0).max(3).step(0.001).name('Point Light')
 gui.add(reactAreaLight, 'intensity').min(0).max(10).step(0.001).name('ReactArea Light')
 gui.add(spotLight, 'intensity').min(0).max(10).step(0.001).name('Spot Light')
 
+// Helpers
+const hemisphereLightHelper = new THREE.HemisphereLightHelper(hemisphereLight, 0.2)
+scene.add(hemisphereLightHelper)
+
 /**
  * Objects
  */
