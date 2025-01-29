@@ -52,23 +52,23 @@ gui.add(rectAreaLight, 'intensity').min(0).max(10).step(0.001).name('RectArea Li
 gui.add(spotLight, 'intensity').min(0).max(10).step(0.001).name('Spot Light')
 
 // Helpers
-const hemisphereLightHelper = new THREE.HemisphereLightHelper(hemisphereLight, 0.2)
-scene.add(hemisphereLightHelper)
+// const hemisphereLightHelper = new THREE.HemisphereLightHelper(hemisphereLight, 0.2)
+// scene.add(hemisphereLightHelper)
 
-const directionalLightHelper = new THREE.DirectionalLightHelper(directionalLight, 0.2)
-scene.add(directionalLightHelper)
+// const directionalLightHelper = new THREE.DirectionalLightHelper(directionalLight, 0.2)
+// scene.add(directionalLightHelper)
 
-const pointLightHelper = new THREE.PointLightHelper(pointLight, 0.2)
-scene.add(pointLightHelper)
+// const pointLightHelper = new THREE.PointLightHelper(pointLight, 0.2)
+// scene.add(pointLightHelper)
 
-const spotLightHelper = new THREE.SpotLightHelper(spotLight)
-scene.add(spotLightHelper)
-window.requestAnimationFrame(() => {
-    spotLightHelper.update()
-})
+// const spotLightHelper = new THREE.SpotLightHelper(spotLight)
+// scene.add(spotLightHelper)
+// window.requestAnimationFrame(() => {
+//     spotLightHelper.update()
+// })
 
-const rectAreaLightHelper = new RectAreaLightHelper(rectAreaLight)
-scene.add(rectAreaLightHelper)
+// const rectAreaLightHelper = new RectAreaLightHelper(rectAreaLight)
+// scene.add(rectAreaLightHelper)
 
 
 /**
