@@ -43,12 +43,12 @@ scene.add(spotLight)
 spotLight.target.position.x = -0.75
 scene.add(spotLight.target)
 
-gui.add(ambientLight, 'intensity').min(0).max(3).step(0.001).name
-gui.add(directionalLight, 'intensity').min(0).max(3).step(0.001)
-gui.add(hemisphereLight, 'intensity').min(0).max(3).step(0.001)
-gui.add(pointLight, 'intensity').min(0).max(3).step(0.001)
-gui.add(reactAreaLight, 'intensity').min(0).max(10).step(0.001)
-gui.add(spotLight, 'intensity').min(0).max(10).step(0.001)
+gui.add(ambientLight, 'intensity').min(0).max(3).step(0.001).name('Ambient Light')
+gui.add(directionalLight, 'intensity').min(0).max(3).step(0.001).name('Directional Light')
+gui.add(hemisphereLight, 'intensity').min(0).max(3).step(0.001).name('Hemisphere Light')
+gui.add(pointLight, 'intensity').min(0).max(3).step(0.001).name('Point Light')
+gui.add(reactAreaLight, 'intensity').min(0).max(10).step(0.001).name('ReactArea Light')
+gui.add(spotLight, 'intensity').min(0).max(10).step(0.001).name('Spot Light')
 
 /**
  * Objects
