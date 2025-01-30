@@ -51,6 +51,8 @@ scene.add(directionalLightCameraHelper)
 const spotLight = new THREE.SpotLight(0xffffff, 5, 10, Math.PI * 0.3)
 
 spotLight.castShadow = true
+spotLight.shadow.mapSize.width = 1024
+spotLight.shadow.mapSize.height = 1024
 
 spotLight.position.set(0, 2, 2)
 scene.add(spotLight)
