@@ -26,7 +26,7 @@ const particleTexture = textureLoader.load('/textures/particles/2.png')
  */
 // Geometry
 const particlesGeometry = new THREE.BufferGeometry()
-const count = 5000
+const count = 20000
 
 const positions = new Float32Array(count * 3)
 for (let i = 0; i < count * 3; i++) {
@@ -56,12 +56,6 @@ particlesMaterial.blending = THREE.AdditiveBlending
 const particles = new THREE.Points(particlesGeometry, particlesMaterial)
 scene.add(particles)
 
-// Cube
-const cube = new THREE.Mesh(
-    new THREE.BoxGeometry(),
-    new THREE.MeshBasicMaterial()
-)
-scene.add(cube)
 
 /**
  * Sizes
