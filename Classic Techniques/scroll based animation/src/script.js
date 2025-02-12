@@ -12,7 +12,7 @@ const parameters = {
 
 gui
     .addColor(parameters, 'materialColor')
-    .onChange( () => {
+    .onChange(() => {
         material.color.set(parameters.materialColor)
     })
 
@@ -33,7 +33,7 @@ const textureLoader = new THREE.TextureLoader()
 const gradientTexture = textureLoader.load('textures/gradients/3.jpg')
 
 // Material
-const material = new THREE.MeshToonMaterial({ color: parameters .materialColor})
+const material = new THREE.MeshToonMaterial({ color: parameters.materialColor, gradientMap: gradientTexture })
 
 
 // Meshes
@@ -57,7 +57,7 @@ scene.add(mesh1, mesh2, mesh3)
 /**
  * Lights
  */
-const directionalLight = new THREE.DirectionalLight('#ffffff', 3)
+const directionalLight = new THREE.DirectionalLight('#ffffff', 2)
 directionalLight.position.set(1, 1, 0)
 scene.add(directionalLight)
 
