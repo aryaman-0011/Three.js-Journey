@@ -38,7 +38,7 @@ const material = new THREE.MeshToonMaterial({ color: parameters.materialColor, g
 
 
 // Meshes
-const objectsDistance = 2
+const objectsDistance = 4
 
 const mesh1 = new THREE.Mesh(
     new THREE.TorusGeometry(1, 0.4, 16, 60),
@@ -55,9 +55,9 @@ const mesh3 = new THREE.Mesh(
     material
 )
 
-mesh1.position.y = objectsDistance * 0
-mesh2.position.y = objectsDistance * 1
-mesh3.position.y = objectsDistance * 2
+mesh1.position.y = - objectsDistance * 0
+mesh2.position.y = - objectsDistance * 1
+mesh3.position.y = - objectsDistance * 2
 
 scene.add(mesh1, mesh2, mesh3)
 
