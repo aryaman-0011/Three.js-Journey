@@ -195,8 +195,10 @@ const tick = () => {
     oldElapsedTime = elapsedTime
 
     // Update Physics World
-
     world.step(1 / 60, deltaTime, 3)
+    for(const object of objectsToUpadte){
+        object.mesh.position.copy(object.body.position)
+    }
 
 
     // Update controls
