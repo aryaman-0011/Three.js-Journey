@@ -53,17 +53,6 @@ const defaultCOntactMaterial = new CANNON.ContactMaterial(
 world.addContactMaterial(defaultCOntactMaterial)
 world.defaultContactMaterial = defaultCOntactMaterial
 
-// Sphere
-const sphereShape = new CANNON.Sphere(0.5)
-const sphereBody = new CANNON.Body({
-    mass: 1,
-    position: new CANNON.Vec3(0, 3, 0),
-    shape: sphereShape,
-})
-sphereBody.applyLocalForce(new CANNON.Vec3(150, 0, 0), new CANNON.Vec3(0, 0, 0))
-
-world.addBody(sphereBody)
-
 // Floor
 const floorShape = new CANNON.Plane()
 const floorBody = new CANNON.Body()
@@ -75,21 +64,6 @@ floorBody.quaternion.setFromAxisAngle(
 )
 world.addBody(floorBody)
 
-/**
- * Test sphere
- */
-const sphere = new THREE.Mesh(
-    new THREE.SphereGeometry(0.5, 32, 32),
-    new THREE.MeshStandardMaterial({
-        metalness: 0.3,
-        roughness: 0.4,
-        envMap: environmentMapTexture,
-        envMapIntensity: 0.5
-    })
-)
-sphere.castShadow = true
-sphere.position.y = 0.5
-scene.add(sphere)
 
 /**
  * Floor
@@ -182,15 +156,9 @@ const tick = () => {
     oldElapsedTime = elapsedTime
 
     // Update Physics World
-    sphereBody.applyForce(new CANNON.Vec3(-0.5, 0, 0), sphereBody.position)
-
+    
     world.step(1 / 60, deltaTime, 3)
 
-    // sphere.position.x = sphereBody.position.x
-    // sphere.position.y = sphereBody.position.y
-    // sphere.position.z = sphereBody.position.z
-
-    sphere.position.copy(sphereBody.position)
 
     // Update controls
     controls.update()
