@@ -40,18 +40,18 @@ const world = new CANNON.World()
 world.gravity.set(0, -9.82, 0)
 
 // Materials
-const concreteMaterial = new CANNON.Material('concrete')
-const plasticMaterial = new CANNON.Material('plastic') 
+const defaultMaterial = new CANNON.Material('default')
 
-const concretePlasticCOntactMaterial = new CANNON.ContactMaterial(
-    concreteMaterial,
-    plasticMaterial,
+const defaultCOntactMaterial = new CANNON.ContactMaterial(
+    defaultMaterial,
+    defaultMaterial,
     {
         friction: 0.1,
         restitution: 0.7,
     }
 )
-world.addContactMaterial(concretePlasticCOntactMaterial)
+world.addContactMaterial(defaultCOntactMaterial)
+world.defaultContactMaterial = defaultCOntactMaterial
 
 // Sphere
 const sphereShape = new CANNON.Sphere(0.5)
@@ -59,7 +59,6 @@ const sphereBody = new CANNON.Body({
     mass: 1,
     position: new CANNON.Vec3(0, 3, 0),
     shape: sphereShape,
-    material: plasticMaterial
 })
 
 world.addBody(sphereBody)
@@ -67,7 +66,6 @@ world.addBody(sphereBody)
 // Floor
 const floorShape = new CANNON.Plane()
 const floorBody = new CANNON.Body()
-floorBody.material = concreteMaterial
 floorBody.mass = 0
 floorBody.addShape(floorShape)
 floorBody.quaternion.setFromAxisAngle(
