@@ -49,6 +49,17 @@ const sphereBody = new CANNON.Body({
 
 world.addBody(sphereBody)
 
+// Floor
+const floorShape = new CANNON.Plane()
+const floorBody = new CANNON.Body()
+floorBody.mass = 0
+floorBody.addShape(floorShape)
+floorBody.quaternion.setFromAxisAngle(
+    new CANNON.Vec3(-1, 0, 0),
+    Math.PI * 0.5
+)
+world.addBody(floorBody)
+
 /**
  * Test sphere
  */
@@ -157,6 +168,12 @@ const tick = () => {
 
     // Update Physics World
     world.step(1 / 60, deltaTime, 3)
+
+    // sphere.position.x = sphereBody.position.x
+    // sphere.position.y = sphereBody.position.y
+    // sphere.position.z = sphereBody.position.z
+
+    sphere.position.copy(sphereBody.position)
 
     // Update controls
     controls.update()
