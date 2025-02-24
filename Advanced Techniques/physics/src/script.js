@@ -205,7 +205,6 @@ const createSphere = (radius, position) => {
     mesh.scale.set(radius, radius, radius)
     mesh.castShadow = true
     mesh.position.copy(position)
-    body.addEventListener('collide', playHitSound)
     scene.add(mesh)
 
     // Cannon.js body
@@ -217,6 +216,7 @@ const createSphere = (radius, position) => {
         material: defaultMaterial
     })
     body.position.copy(position)
+    body.addEventListener('collide', playHitSound)
     world.addBody(body)
 
     // Save in objects to update
