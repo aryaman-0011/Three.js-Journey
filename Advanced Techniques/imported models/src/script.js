@@ -22,11 +22,14 @@ const gltfLoader = new GLTFLoader()
 
 gltfLoader.load(
     '/models/FlightHelmet/glTF/FlightHelmet.gltf', (gltf) => {
-        const children = [...gltf.scene.children]
+        // const children = [...gltf.scene.children]
 
-        for(const child of children){
-            scene.add(child)
-        }
+        // for(const child of children){
+        //     scene.add(child)
+        // }
+
+        // Another way of adding to scene
+        scene.add(gltf.scene)
     }
 )
 
