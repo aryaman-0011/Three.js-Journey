@@ -33,7 +33,7 @@ gltfLoader.load(
         // }
 
         // Another way of adding to scene
-        
+        gltf.scene.scale.set(0.025, 0.025, 0.025)
         scene.add(gltf.scene)
     }
 )
