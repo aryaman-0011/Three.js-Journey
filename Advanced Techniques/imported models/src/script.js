@@ -25,7 +25,7 @@ const gltfLoader = new GLTFLoader()
 gltfLoader.setDRACOLoader(dracoLoader)
 
 gltfLoader.load(
-    '/models/Duck/glTF-Draco/Duck.gltf', (gltf) => {
+    '/models/Fox/glTF/Fox.gltf', (gltf) => {
         // const children = [...gltf.scene.children]
 
         // for(const child of children){
@@ -33,6 +33,7 @@ gltfLoader.load(
         // }
 
         // Another way of adding to scene
+        
         scene.add(gltf.scene)
     }
 )
