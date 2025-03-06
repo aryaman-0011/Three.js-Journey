@@ -45,6 +45,8 @@ const rayOrigin = new THREE.Vector3(-3, 0, 0)
 const rayDirection = new THREE.Vector3(10, 0, 0)
 rayDirection.normalize()
 
+rayCaster.set(rayOrigin, rayDirection)
+
 /**
  * Sizes
  */
