@@ -114,22 +114,16 @@ const tick = () => {
 
     rayCaster.setFromCamera(mouse, camera)
 
-    // const rayOrigin = new THREE.Vector3(-3, 0, 0)
-    // const rayDirection = new THREE.Vector3(1, 0, 0)
-    // rayDirection.normalize()
+    const objectsToTest = [object1, object2, object3]
+    const intersects = rayCaster.intersectObjects(objectsToTest)
 
-    // rayCaster.set(rayOrigin, rayDirection)
+    for(const object of objectsToTest){
+        object.material.color.set('#ff0000')
+    }
 
-    // const objectsToTest = [object1, object2, object3]
-    // const intersects = rayCaster.intersectObjects(objectsToTest)
-
-    // for(const object of objectsToTest){
-    //     object.material.color.set('#ff0000')
-    // }
-
-    // for(const intersect of intersects){
-    //     intersect.object.material.color.set('#0000ff')
-    // }
+    for(const intersect of intersects){
+        intersect.object.material.color.set('#0000ff')
+    }
     
 
     // Update controls
