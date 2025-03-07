@@ -104,6 +104,17 @@ const tick = () => {
     rayDirection.normalize()
 
     rayCaster.set(rayOrigin, rayDirection)
+
+    const objectsToTest = [object1, object2, object3]
+    const intersects = rayCaster.intersectObjects(objectsToTest)
+
+    for(const object of objectsToTest){
+        object.material.color.set('#ff0000')
+    }
+
+    for(const intersect of intersects){
+        intersect.object.material.color.set('#0000ff')
+    }
     
 
     // Update controls
