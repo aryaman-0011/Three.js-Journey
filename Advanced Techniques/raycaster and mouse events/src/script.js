@@ -41,11 +41,6 @@ scene.add(object1, object2, object3)
  */
 const rayCaster = new THREE.Raycaster()
 
-const rayOrigin = new THREE.Vector3(-3, 0, 0)
-const rayDirection = new THREE.Vector3(10, 0, 0)
-rayDirection.normalize()
-
-rayCaster.set(rayOrigin, rayDirection)
 
 /**
  * Sizes
@@ -97,6 +92,11 @@ const clock = new THREE.Clock()
 
 const tick = () => {
     const elapsedTime = clock.getElapsedTime()
+
+    // Animate objects
+    object1.position.y = Math.sin(elapsedTime * 0.3) * 1.5
+    object2.position.y = Math.sin(elapsedTime * 0.8) * 1.5
+    object3.position.y = Math.sin(elapsedTime * 1.4) * 1.5
 
     // Update controls
     controls.update()
