@@ -100,6 +100,8 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 /**
  * Animate
  */
+const currentIntersect = null
+
 const clock = new THREE.Clock()
 
 const tick = () => {
@@ -123,6 +125,10 @@ const tick = () => {
 
     for(const intersect of intersects){
         intersect.object.material.color.set('#0000ff')
+    }
+
+    if(intersects.length){
+        
     }
     
 
