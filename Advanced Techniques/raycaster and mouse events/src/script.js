@@ -76,6 +76,22 @@ window.addEventListener('mousemove', (event) => {
 
 })
 
+window.addEventListener('click', () => {
+    if (currentIntersect) {
+        if (currentIntersect.object === object1) {
+            console.log('click on object 1')
+        }
+
+        else if (currentIntersect.object === object2) {
+            console.log('click on object 2')
+        }
+
+        else if (currentIntersect.object === object3) {
+            console.log('click on object 3')
+        }
+    }
+})
+
 /**
  * Camera
  */
@@ -119,18 +135,29 @@ const tick = () => {
     const objectsToTest = [object1, object2, object3]
     const intersects = rayCaster.intersectObjects(objectsToTest)
 
-    for(const object of objectsToTest){
+    for (const object of objectsToTest) {
         object.material.color.set('#ff0000')
     }
 
-    for(const intersect of intersects){
+    for (const intersect of intersects) {
         intersect.object.material.color.set('#0000ff')
     }
 
-    if(intersects.length){
-        
+    if (intersects.length) {
+        if (currentIntersect === null) {
+            console.log('mouse enter')
+        }
+
+        currentIntersect = intersects[0]
     }
-    
+    else {
+        if (currentIntersect) {
+            console.log('mouse leave')
+        }
+
+        currentIntersect = null
+    }
+
 
     // Update controls
     controls.update()
